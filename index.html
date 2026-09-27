@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Structurizr</title>
+
+    <link href="./css/bootstrap-5.3.8.min.css" rel="stylesheet" media="screen">
+    <link href="./css/structurizr.css" rel="stylesheet" media="screen">
+
+    <script src="./js/bootstrap-5.3.8.min.js"></script>
+
+    <link rel="icon" href="./img/favicon.png" />
+</head>
+
+<body>
+    <div id="content">
+
+        <div class="centered" style="width: 60%; margin: 100px auto 0 auto;">
+            <img src="./img/structurizr-banner.png" alt="Structurizr" class="img-fluid" /></a>        
+        </div>
+
+        <div class="centered">
+            <p style="margin-top: 20px; margin-bottom: 0; font-size: 40px;">
+                The original tool for the C4 model
+            </p>
+            <p style="margin-top: 5px; margin-bottom: 10px; font-size: 30px;">
+                Models as code | open source | manual layout | AI friendly
+            </p>
+            <p style="margin-top: 5px; margin-bottom: 10px; font-size: 30px;">
+                <img src="./img/bootstrap-icons/github.svg" class="icon-md" /> <a href="https://github.com/structurizr/structurizr" target="_blank">GitHub repo</a>
+                |
+                <img src="./img/bootstrap-icons/book.svg" class="icon-md" /> <a href="https://docs.structurizr.com" target="_blank">Docs</a>
+                |
+                <img src="./img/bootstrap-icons/megaphone.svg" class="icon-md" /> <a href="https://www.patreon.com/c/Structurizr" target="_blank">Patreon</a>
+            </p>
+        </div>
+
+        <div class="section">
+            <div class="container centered" style="margin-top: 0">
+                <p>
+                    Structurizr is a "models as code" tool designed for the C4 model - you write <a href="https://docs.structurizr.com/dsl" target="_blank">Structurizr DSL</a>
+                    to create <b>multiple software architecture diagrams</b> from a <b>single model</b>.
+                    Structurizr was created by the author of the C4 model and remains the reference implementation,
+                    making it the best choice if you are looking for compliance and compatibility with the C4 model.
+                </p>
+
+                <div class="row" style="margin-top: 40px; padding-bottom: 10px">
+                    <div class="col-6" style="text-align: left">
+                        <pre style="background: #ffffff;"><code>workspace {
+
+    !identifiers hierarchical
+
+    model {
+        u = person "User"
+        ss = softwareSystem "Software System" {
+            wa = container "Web Application"
+            db = container "Database Schema" {
+                tags "Database"
+            }
+        }
+
+        u -> ss.wa "Uses"
+        ss.wa -> ss.db "Reads from and writes to"
+    }
+
+    views {
+        systemContext ss "Diagram1" {
+            include *
+        }
+
+        container ss "Diagram2" {
+            include *
+        }
+
+        styles {
+            ...
+        }
+    }
+
+}</code></pre>
+                    </div>
+                    <div class="col-6 centered">
+                        <div style="margin-bottom: 30px">
+                            <a href="https://playground.structurizr.com/?src=https://docs.structurizr.com/dsl/tutorial/5.dsl&view=Diagram1" target="_blank"><img src="https://docs.structurizr.com/dsl/tutorial/5-1.png" alt="Multiple diagrams from a single model" class="img-thumbnail" /></a>
+                        </div>
+
+                        <div style="margin-bottom: 30px">
+                            <a href="https://playground.structurizr.com/?src=https://docs.structurizr.com/dsl/tutorial/5.dsl&view=Diagram2" target="_blank"><img src="https://docs.structurizr.com/dsl/tutorial/5-2.png" alt="Multiple diagrams from a single model" class="img-thumbnail" /></a>
+                        </div>
+
+                        <div style="margin-bottom: 30px">
+                            <img src="https://docs.structurizr.com/dsl/tutorial/5-3.png" alt="Multiple diagrams from a single model" class="img-thumbnail" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="centered" style="font-size: 20px">
+                    <p>
+                        This Structurizr DSL example creates two diagrams based upon a single set of elements and relationships.
+                    </p>
+                    <a href="https://docs.structurizr.com/dsl/tutorial" target="_blank">Structurizr DSL tutorial</a>
+                    |
+                    <a href="https://playground.structurizr.com?src=https://docs.structurizr.com/dsl/tutorial/5.dsl" target="_blank">Try it in the playground</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="container centered">
+                <p style="margin-top: 80px; margin-bottom: 10px">
+                    <span style="font-size: 40px">Designed for the C4 model</span>
+                </p>
+                <p>
+                    Structurizr is specifically designed to support the <a href="https://c4model.com" target="_blank">C4 model for visualising software architecture</a>,
+                    by its creator <a href="https://simonbrown.je" target="_blank">Simon Brown</a>.
+                    Diagrams are interactive (e.g. zoom in/out), animatable, embeddable,
+                    and include an automatically generated diagram key/legend - see the 
+                    <a href="https://c4model.com/example" target="_blank">interactive example</a> for a demo.
+                </p>
+
+                <br />
+
+                <div class="row">
+                    <div class="col-sm-2">
+                        <p>
+                            <a href="https://c4model.com/diagrams/system-landscape" target="_blank"><img src="https://c4model.com/images/examples/SystemLandscape.png" alt="System Landscape diagram" class="img-thumbnail" /></a>
+                        </p>
+                        <p class="smaller centered">
+                            System Landscape diagram
+                        </p>
+                        <p>
+                            <img src="https://c4model.com/images/examples/SystemLandscape-key.png" alt="System Landscape diagram key" class="img-thumbnail" />
+                        </p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>
+                            <a href="https://c4model.com/diagrams/system-context" target="_blank"><img src="https://c4model.com/images/examples/SystemContext.png" alt="System Context diagram" class="img-thumbnail" /></a>
+                        </p>
+                        <p class="smaller centered">
+                            System Context diagram
+                        </p>
+                        <p>
+                            <img src="https://c4model.com/images/examples/SystemContext-key.png" alt="System Context diagram key" class="img-thumbnail" />
+                        </p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>
+                            <a href="https://c4model.com/diagrams/container" target="_blank"><img src="https://c4model.com/images/examples/Containers.png" alt="Container diagram" class="img-thumbnail" /></a>
+                        </p>
+                        <p class="smaller centered">
+                            Container diagram
+                        </p>
+                        <p>
+                            <img src="https://c4model.com/images/examples/Containers-key.png" alt="Container diagram key" class="img-thumbnail" />
+                        </p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>
+                            <a href="https://c4model.com/diagrams/component" target="_blank"><img src="https://c4model.com/images/examples/Components.png" alt="Component diagram" class="img-thumbnail" /></a>
+                        </p>
+                        <p class="smaller centered">
+                            Component diagram
+                        </p>
+                        <p>
+                            <img src="https://c4model.com/images/examples/Components-key.png" alt="Component diagram key" class="img-thumbnail" />
+                        </p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>
+                            <a href="https://c4model.com/diagrams/dynamic" target="_blank"><img src="https://c4model.com/images/examples/Dynamic-Collaboration.png" alt="Dynamic diagram" class="img-thumbnail" /></a>
+                        </p>
+                        <p class="smaller centered">
+                            Dynamic diagram
+                        </p>
+                        <p>
+                            <img src="https://c4model.com/images/examples/Dynamic-Collaboration-key.png" alt="Dynamic diagram key" class="img-thumbnail" />
+                        </p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p>
+                            <a href="https://c4model.com/diagrams/deployment" target="_blank"><img src="https://c4model.com/images/examples/Deployment-Live.png" alt="Deployment diagram" class="img-thumbnail" /></a>
+                        </p>
+                        <p class="smaller centered">
+                            Deployment diagram
+                        </p>
+                        <p>
+                            <img src="https://c4model.com/images/examples/Deployment-Live-key.png" alt="Deployment diagram key" class="img-thumbnail" />
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="container centered">
+                <p style="margin-top: 80px; margin-bottom: 10px">
+                    <span style="font-size: 40px">Tooling options</span>
+                </p>
+
+                <div class="row">
+                    <div class="col-3 centered">
+                        <h3><img src="./img/bootstrap-icons/flask.svg" class="icon-md" /> <a href="https://docs.structurizr.com/playground" target="_blank">playground</a></h3>
+                        <p>
+                            A browser-based playground that can be used to create diagrams and experiment with the DSL.
+                        </p>
+                    </div>
+                    <div class="col-3 centered">
+                        <h3><img src="./img/bootstrap-icons/laptop.svg" class="icon-md" /> <a href="https://docs.structurizr.com/local" target="_blank">local</a></h3>
+                        <p>
+                            Provides a way to view diagrams and modify their layout on your local computer (the equivalent of the previous Structurizr Lite).                        
+                        </p>
+                    </div>
+                    <div class="col-3 centered">
+                        <h3><img src="./img/bootstrap-icons/hdd-network.svg" class="icon-md" /> <a href="https://docs.structurizr.com/server" target="_blank">server</a></h3>
+                        <p>
+                            A self-hosted Structurizr server (the equivalent of the previous Structurizr on-premises installation).
+                            Two versions are available - open core (<a href="https://docs.structurizr.com/building" target="_blank">build yourself</a>) and pre-built binaries with features designed for use in enterprise environments (<a href="https://docs.structurizr.com/server/pricing" target="_blank">license required</a>).
+                        </p>
+                    </div>
+                    <div class="col-3 centered">
+                        <h3><img src="./img/bootstrap-icons/filetype-txt.svg" class="icon-md" /> <a href="https://docs.structurizr.com/export" target="_blank">export</a></h3>
+                        <p>
+                            A CLI tool to export the views in a Structurizr workspace to PlantUML, Mermaid, or a static HTML site.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="centered">
+                    <h3><img src="./img/bootstrap-icons/box.svg" class="icon-md" /> <a href="https://docs.structurizr.com/binaries" target="_blank">Single binary</a></h3>
+
+                    <h4>Docker image</h4>
+                    <pre><code>docker pull structurizr/structurizr
+docker run -it --rm -v $PWD:/usr/local/structurizr structurizr/structurizr &lt;command&gt; [parameters]</code></pre>
+
+                    <h4>Java .war file</h4>
+                    <pre><code>curl -O https://download.structurizr.com/structurizr.war
+java -jar structurizr.war &lt;command&gt; [parameters]</code></pre>
+
+                    <br /><br />
+                    
+                    <div class="row">
+                        <div class="col-9 centered">
+                            <h3><img src="./img/bootstrap-icons/robot.svg" class="icon-md" /> <a href="https://docs.structurizr.com/ai" target="_blank">MCP server</a></h3>
+                            <p>
+                                A standalone, free and open source, MCP server is also available to parse & validate DSL, export diagrams to PlantUML & Mermaid, and manage workspaces hosted on a Structurizr server.
+                            </p>
+                        </div>
+                        <div class="col-3 centered">
+                            <a href="https://www.oreilly.com/library/view/the-c4-model/9798341660113/" target="_blank"><img src="./img/c4model-book.png" class="img-fluid img-thumbnail" style="width: 66%"/></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br /><br />
+</body>
+</html>
